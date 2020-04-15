@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 Test1
+=======
+Test1
+Test2
+Test3
+>>>>>>> parent of e975160... Test4
