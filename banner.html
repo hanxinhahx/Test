@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="banner.css" type="text/css">
+</head>
+<body>
+    <div class="banner">
+        <div class="imglist">
+            <ul>
+                <li class="l1"><img src="E:\Test\img\p1.jpg" alt=""></li>
+                <li class="l2"><img src="E:\Test\img\p2.jpg" alt=""></li>
+                <li class="l3"><img src="E:\Test\img\p3.jpg" alt=""></li>
+                <li class="l4"><img src="E:\Test\img\p4.jpg" alt=""></li>
+                <li class="l5"><img src="E:\Test\img\p5.jpg" alt=""></li>
+                <li class="l6"><img src="E:\Test\img\p6.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="line">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="btnleft">&lt;</div>
+        <div class="btnright">&gt;</div>
+    </div>
+      <script>
+          var index=0;
+          var aspan=document.querySelectorAll("span");
+          function setLinebColor(){
+              for(var i=0;i<aspan.length;i++){
+                  aspan[i].style.backgroundColor="#ccc";
+              }
+              aspan[index].style.backgroundColor="#45c17c";
+          }
+             setLinebColor();
+             var aliName=["l1","l2","l3","l4","l5","l6"];
+             var ali=document.querySelectorAll("li");
+     
+            function nextPic(){
+               aliName.unshift(aliName[5]);
+               aliName.pop();
+               for(var i=0;i<ali.length;i++){
+                    ali[i].setAttribute("class",aliName[i]);
+               }
+              index++;
+              setLinebColor();
+              if(index>5) index=0;
+            }
+              var btnright=document.querySelector(".btnright");
+              btnright.onclick=nextPic;
+            //  function lastPic(){
+            //     aliName.unshift(aliName[0]);
+            //    aliName.pop();
+            //    for(var i=ali.length;i>=0;i--){
+            //         ali[i].setAttribute("class",aliName[i]);
+            //    }
+            //   index--;
+            //   setLinebColor();
+            //   if(index<0) index=5;
+            //  }
+            //  var btnleft=document.querySelector(".btnleft");
+            //  btnleft.onclick=lastPic;
+      </script>
+</body>
+
+</html>
